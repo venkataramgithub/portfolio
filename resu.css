@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher&family=Roboto:ital,wght@0,300;1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Crimson+Text&family=Open+Sans&family=PT+Sans+Narrow&family=Roboto:wght@300&display=swap');
-font-family: 'Cormorant Garamond', serif;
-font-family: 'Crimson Text', serif;
-font-family: 'Open Sans', sans-serif;
-font-family: 'PT Sans Narrow', sans-serif;
-font-family: 'Roboto', sans-serif;
 body{
     margin: 0px;
     padding: 0px;
@@ -76,10 +71,67 @@ header .navbar{
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
+    position: relative;
+    transition: 1s all ease;
 }
+.home-container.active{
+    opacity:1;
+    animation: fade-bottom 1s ease-in;
+}
+.active.fade-bottom {
+    animation: fade-bottom 1s ease-in;
+  }
+  .active.fade-left {
+    animation: fade-left 1s ease-in;
+  }
+  .active.fade-right {
+    animation: fade-right 1s ease-in;
+  }
+@keyframes fade-bottom {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-left {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-right {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 .home-container .about-user{
     width:450px;
     padding:20px 5px;
+    animation:animate 1s ease-in-out
+}
+@keyframes animate{
+    0%{
+        transform: translateX(-50px);
+        opacity:0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 .about-user h2{
     font-size:60px;
@@ -118,6 +170,18 @@ header .navbar{
     padding:15px;
     max-height:380px;
     border-radius: 4%;
+    animation:userimganime 1s ease-in;
+}
+@keyframes userimganime {
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    
 }
 .home-container .image-user img{
     width:300px;
@@ -244,6 +308,7 @@ header .navbar{
     text-align: center;
     font-family: 'Crimson Text', serif;
     height:430px;
+    position: relative;
 }
 .project-block img{
     width:250px;
@@ -336,5 +401,4 @@ form button{
     border: none;
     outline: none;
     border-radius:5px;
-
 }
